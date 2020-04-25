@@ -1,0 +1,20 @@
+# pull docker image + create container
+docker pull mongo
+docker run -d -p 27017-27019:27017-27019 --name mongodb mongo:latest
+
+# install mongo client
+mongo --host localhost --port 27017
+
+# import csv to mongodb
+mongoimport -h localhost:27017 -d thepolyglotdeveloper -c things --type csv --file layanan.csv --headerline
+
+# cara liat data all
+show dbs
+use your_database_name
+show collections
+db.collection_name.find().pretty()
+
+#find data berdasarkan id kategori
+db.things.find({ 'KATEGORI' : 572 }).count()
+
+#find

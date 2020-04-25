@@ -1,0 +1,4 @@
+# jika akan menggunakan mysql linkan menggunakan nama container
+$ misal name: mysql
+
+sudo docker run --name myadmin -d --link mysql:db -p 8080:80 phpmyadmin/phpmyadmin
